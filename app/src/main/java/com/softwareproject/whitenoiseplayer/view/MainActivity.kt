@@ -43,6 +43,6 @@ class MainActivity : BaseActivity() {
                     mainViewPager.currentItem = 2
                 }
             }
-            return@OnNavigationItemSelectedListener true
+            true
         }
 }

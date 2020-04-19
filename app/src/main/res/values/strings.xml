@@ -11,4 +11,6 @@
     <string name="collect_text">当前收藏</string>
     <string name="collect_icon_content">heart</string>
     <string name="local_text">本地歌曲</string>
+    <string name="often_listening_text">我的常听</string>
+    <string name="item_image_content">itemImage</string>
 </resources>

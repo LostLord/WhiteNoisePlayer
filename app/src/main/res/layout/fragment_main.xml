@@ -14,136 +14,17 @@
         android:layout_marginHorizontal="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mainRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:orientation="vertical"
         android:paddingHorizontal="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainTop">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/searchEditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:autofillHints=""
-                android:background="@drawable/search_background"
-                android:drawableStart="@drawable/search_icon"
-                android:drawablePadding="5dp"
-                android:hint="@string/search_hint"
-                android:inputType="text"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="LabelFor" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/collectWrapper"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/collect_local_block_height"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/collect_background"
-                android:padding="10dp"
-                app:layout_constraintEnd_toStartOf="@+id/localWrapper"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/searchEditText">
-
-                <ImageView
-                    android:id="@+id/favoriteIcon"
-                    android:layout_width="@dimen/favorite_icon_size"
-                    android:layout_height="@dimen/favorite_icon_size"
-                    android:src="@drawable/heart_icon"
-                    app:layout_constraintVertical_chainStyle="spread_inside"
-                    app:layout_constraintBottom_toTopOf="@+id/collectText"
-                    app:layout_constraintStart_toStartOf="@+id/collectText"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:contentDescription="@string/collect_icon_content" />
-
-                <TextView
-                    android:id="@+id/collectText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/collect_text"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/favoriteIcon" />
-
-                <TextView
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:text="26"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="28sp"
-                    android:id="@+id/collectNumber"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/localWrapper"
-                android:layout_width="0dp"
-                android:padding="10dp"
-                android:layout_height="@dimen/collect_local_block_height"
-                android:background="@drawable/local_background"
-                app:layout_constraintBottom_toBottomOf="@id/collectWrapper"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/collectWrapper"
-                app:layout_constraintTop_toTopOf="@id/collectWrapper">
-
-                <ImageView
-                    android:id="@+id/localIcon"
-                    android:layout_width="@dimen/favorite_icon_size"
-                    android:layout_height="@dimen/favorite_icon_size"
-                    android:src="@drawable/star_icon"
-                    app:layout_constraintVertical_chainStyle="spread_inside"
-                    app:layout_constraintBottom_toTopOf="@+id/localText"
-                    app:layout_constraintStart_toStartOf="@+id/localText"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:contentDescription="@string/collect_icon_content" />
-
-                <TextView
-                    android:id="@+id/localText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/local_text"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/localIcon" />
-
-                <TextView
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:text="26"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="28sp"
-                    android:id="@+id/localNumber"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+        app:layout_constraintTop_toBottomOf="@id/mainTop" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
