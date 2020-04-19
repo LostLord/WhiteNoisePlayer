@@ -6,4 +6,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="playing_text">正在播放</string>
+    <string name="search_hint">搜索白噪音</string>
+    <string name="collect_text">当前收藏</string>
+    <string name="collect_icon_content">heart</string>
+    <string name="local_text">本地歌曲</string>
 </resources>

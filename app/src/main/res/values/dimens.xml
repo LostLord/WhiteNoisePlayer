@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="navigation_icon_normal_size">35dp</dimen>
+    <dimen name="player_image_size">50dp</dimen>
+    <dimen name="collect_local_block_height">100dp</dimen>
+    <dimen name="favorite_icon_size">25dp</dimen>
 </resources>
