@@ -1,48 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/musicCoverImage"
-        android:layout_width="180dp"
-        android:layout_height="150dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/test"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:contentDescription="@string/item_image_content" />
+    <data>
+        <variable
+            name="number"
+            type="String" />
+    </data>
 
-    <TextView
-        app:layout_constraintStart_toEndOf="@id/musicCoverImage"
-        app:layout_constraintBottom_toTopOf="@id/musicNameText"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="No.1"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/musicNameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:layout_marginRight="30dp"
-        app:layout_constraintEnd_toStartOf="@id/playButton"
-        app:layout_constraintTop_toTopOf="@id/playButton"
-        app:layout_constraintBottom_toBottomOf="@id/playButton"
-        android:text="都市"/>
+        <com.rishabhharit.roundedimageview.RoundedImageView
+            android:id="@+id/musicCoverImage"
+            android:layout_width="180dp"
+            android:layout_height="150dp"
+            android:contentDescription="@string/item_image_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/test"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/playButton"
-        android:src="@drawable/test"
-        android:scaleType="centerCrop"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@{number}"
+            android:textColor="@color/textCaption"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/musicNameText"
+            app:layout_constraintStart_toEndOf="@id/musicCoverImage" />
+
+        <TextView
+            android:id="@+id/musicNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:text="都市"
+            android:textColor="@color/textNormal"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@id/playButton"
+            app:layout_constraintEnd_toStartOf="@id/playButton"
+            app:layout_constraintTop_toTopOf="@id/playButton" />
+
+        <ImageView
+            android:id="@+id/playButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/play_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
