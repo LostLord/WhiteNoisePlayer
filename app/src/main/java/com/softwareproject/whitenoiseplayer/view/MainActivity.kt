@@ -14,7 +14,7 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.falcon_photo_second)
+        setContentView(R.layout.falcon_photo_forth)
 
         // navigation set
 //        navigationView.itemIconTintList = null
