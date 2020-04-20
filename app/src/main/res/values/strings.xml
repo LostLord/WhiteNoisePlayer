@@ -13,4 +13,7 @@
     <string name="local_text">本地歌曲</string>
     <string name="often_listening_text">我的常听</string>
     <string name="item_image_content">itemImage</string>
+    <string name="photof_f">photof_f</string>
+    <string name="photof_s">photof_s</string>
+    <string name="pause">pause</string>
 </resources>
