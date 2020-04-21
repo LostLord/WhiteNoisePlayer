@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.rishabhharit.roundedimageview.RoundedImageView
+            android:id="@+id/coverImage"
+            android:layout_width="170dp"
+            app:cornerRadius="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/test"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="230dp" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="珊瑚"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/brief"
+            app:layout_constraintStart_toStartOf="@id/coverImage" />
+
+        <TextView
+            android:id="@+id/brief"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:maxWidth="130dp"
+            android:text="dfasafds"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/coverImage"
+            app:layout_constraintStart_toStartOf="@id/title" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

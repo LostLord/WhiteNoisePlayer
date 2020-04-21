@@ -29,7 +29,7 @@ class MainActivity : BaseActivity() {
         mFragments.add(MainFragment())
         mFragments.add(PersonalFragment())
         mainViewPager.adapter = MainViewPagerAdapter(this, mFragments)
-        mainViewPager.currentItem = 2
+        mainViewPager.currentItem = 0
     }
 
     private val navigationOnItemSelectedListener =

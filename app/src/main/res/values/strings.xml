@@ -20,4 +20,5 @@
     <string name="personal_collect_text">收藏</string>
     <string name="personal_listen_text">听过</string>
     <string name="personal_listen_recorder_text">听歌纪录</string>
+    <string name="day_recommend">今日推荐</string>
 </resources>

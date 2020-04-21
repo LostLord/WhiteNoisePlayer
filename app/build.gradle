@@ -47,4 +47,5 @@ dependencies {
     implementation 'com.mikhaellopez:circularimageview:4.2.0'
     implementation 'com.rishabhharit.roundedimageview:RoundedImageView:0.8.4'
     api 'com.pdog.util:dimension-extensions:0.9.0'
+    implementation 'com.github.lzyzsd:circleprogress:1.2.1'
 }

@@ -29,7 +29,6 @@ class MainFragment : Fragment() {
         binding.mainLayout.apply {
             setPadding(paddingLeft, getStatusBarHeight(resources), paddingRight, paddingBottom)
         }
-        getStatusBarHeight(resources)
         binding.mainRecyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = listAdapter

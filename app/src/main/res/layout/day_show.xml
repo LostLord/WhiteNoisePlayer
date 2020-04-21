@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:paddingHorizontal="20dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/dayTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="@color/textTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="中午好，" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="@color/textTitle"
+            app:layout_constraintStart_toStartOf="@id/dayTimeText"
+            app:layout_constraintTop_toBottomOf="@id/dayTimeText"
+            android:layout_marginStart="40dp"
+            android:text="HowYR!" />
+
+        <ImageView
+            android:id="@+id/dayImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/noon"
+            app:layout_constraintBottom_toBottomOf="@id/username"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/decoration"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/textCaption"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/username" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/decoration"
+            android:textSize="20sp"
+            android:layout_marginVertical="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/textNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/day_recommend" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
