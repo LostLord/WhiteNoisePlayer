@@ -1,168 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/userBackground"
-        android:layout_width="0dp"
-        android:layout_height="350dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/test" />
+    <data>
 
-    <com.mikhaellopez.circularimageview.CircularImageView
-        android:id="@+id/userAvatar"
-        android:layout_width="0dp"
-        android:layout_height="220dp"
-        android:src="@drawable/test"
-        app:civ_border="false"
-        app:layout_constraintBottom_toBottomOf="@id/userBackground"
-        app:layout_constraintDimensionRatio=",1:1"
-        app:layout_constraintEnd_toStartOf="@+id/guideline72"
-        app:layout_constraintStart_toStartOf="@+id/guideline71"
-        app:layout_constraintTop_toBottomOf="@id/userBackground" />
+    </data>
 
-    <TextView
-        android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="HowYR"
-        android:textColor="@color/textNormal"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="@id/userAvatar"
-        app:layout_constraintStart_toStartOf="@id/userAvatar"
-        app:layout_constraintTop_toBottomOf="@id/userAvatar" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline71"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.33" />
+        <ImageView
+            android:id="@+id/userBackground"
+            android:layout_width="0dp"
+            android:layout_height="350dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/test" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline72"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.67" />
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/userAvatar"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:src="@drawable/test"
+            app:civ_border="false"
+            app:layout_constraintBottom_toBottomOf="@id/userBackground"
+            app:layout_constraintDimensionRatio=",1:1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline72"
+            app:layout_constraintStart_toStartOf="@+id/guideline71"
+            app:layout_constraintTop_toBottomOf="@id/userBackground" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline70"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="391dp" />
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HowYR"
+            android:textColor="@color/textNormal"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@id/userAvatar"
+            app:layout_constraintStart_toStartOf="@id/userAvatar"
+            app:layout_constraintTop_toBottomOf="@id/userAvatar" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline73"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="20dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline71"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33" />
 
-    <View
-        android:id="@+id/topBorder"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@color/textCaption"
-        app:layout_constraintEnd_toEndOf="@id/guideline73"
-        app:layout_constraintStart_toStartOf="@+id/guideline70"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline72"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.67" />
 
-    <TextView
-        android:id="@+id/listenNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/personal_song_number_size"
-        android:text="108"
-        app:layout_constraintEnd_toEndOf="@+id/listenText"
-        app:layout_constraintStart_toStartOf="@+id/listenText"
-        app:layout_constraintTop_toBottomOf="@+id/topBorder" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline70"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="391dp" />
 
-    <TextView
-        android:id="@+id/localNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/personal_song_number_size"
-        android:text="9"
-        app:layout_constraintEnd_toEndOf="@+id/localText"
-        app:layout_constraintStart_toStartOf="@+id/localText"
-        app:layout_constraintTop_toBottomOf="@+id/topBorder" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline73"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp" />
 
-    <TextView
-        android:id="@+id/collectNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/personal_song_number_size"
-        android:text="10"
-        app:layout_constraintStart_toStartOf="@id/collectText"
-        app:layout_constraintEnd_toEndOf="@id/collectText"
-        app:layout_constraintTop_toBottomOf="@id/topBorder"
-        tools:layout_editor_absoluteX="296dp"
-        tools:layout_editor_absoluteY="499dp" />
+        <View
+            android:id="@+id/topBorder"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/textCaption"
+            app:layout_constraintEnd_toEndOf="@id/guideline73"
+            app:layout_constraintStart_toStartOf="@+id/guideline70"
+            app:layout_constraintTop_toBottomOf="@+id/username" />
 
-    <TextView
-        android:id="@+id/listenText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/textNormal"
-        android:textSize="@dimen/personal_song_info_size"
-        android:text="@string/personal_listen_text"
-        app:layout_constraintEnd_toStartOf="@+id/localText"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guideline70"
-        app:layout_constraintTop_toBottomOf="@+id/listenNumber" />
+        <TextView
+            android:id="@+id/listenNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/personal_song_number_size"
+            android:text="108"
+            app:layout_constraintEnd_toEndOf="@+id/listenText"
+            app:layout_constraintStart_toStartOf="@+id/listenText"
+            app:layout_constraintTop_toBottomOf="@+id/topBorder" />
 
-    <TextView
-        android:id="@+id/collectText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/textNormal"
-        android:textSize="@dimen/personal_song_info_size"
-        android:text="@string/personal_collect_text"
-        app:layout_constraintBottom_toBottomOf="@+id/localText"
-        app:layout_constraintEnd_toStartOf="@+id/guideline73"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/localText"
-        app:layout_constraintTop_toTopOf="@+id/localText" />
+        <TextView
+            android:id="@+id/localNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/personal_song_number_size"
+            android:text="9"
+            app:layout_constraintEnd_toEndOf="@+id/localText"
+            app:layout_constraintStart_toStartOf="@+id/localText"
+            app:layout_constraintTop_toBottomOf="@+id/topBorder" />
 
-    <TextView
-        android:id="@+id/localText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/personal_local_text"
-        android:textColor="@color/textNormal"
-        android:textSize="@dimen/personal_song_info_size"
-        app:layout_constraintBottom_toBottomOf="@+id/listenText"
-        app:layout_constraintEnd_toStartOf="@+id/collectText"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/listenText"
-        app:layout_constraintTop_toTopOf="@+id/listenText" />
+        <TextView
+            android:id="@+id/collectNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/personal_song_number_size"
+            android:text="10"
+            app:layout_constraintStart_toStartOf="@id/collectText"
+            app:layout_constraintEnd_toEndOf="@id/collectText"
+            app:layout_constraintTop_toBottomOf="@id/topBorder"
+            tools:layout_editor_absoluteX="296dp"
+            tools:layout_editor_absoluteY="499dp" />
 
-    <View
-        android:id="@+id/bottomBorder"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="@color/textCaption"
-        app:layout_constraintEnd_toEndOf="@id/guideline73"
-        app:layout_constraintStart_toStartOf="@+id/guideline70"
-        app:layout_constraintTop_toBottomOf="@+id/localText" />
+        <TextView
+            android:id="@+id/listenText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textNormal"
+            android:textSize="@dimen/personal_song_info_size"
+            android:text="@string/personal_listen_text"
+            app:layout_constraintEnd_toStartOf="@+id/localText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline70"
+            app:layout_constraintTop_toBottomOf="@+id/listenNumber" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/personal_listen_recorder_text"
-        android:textSize="@dimen/personal_song_info_size"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintStart_toStartOf="@+id/guideline70"
-        app:layout_constraintTop_toBottomOf="@id/bottomBorder" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/collectText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textNormal"
+            android:textSize="@dimen/personal_song_info_size"
+            android:text="@string/personal_collect_text"
+            app:layout_constraintBottom_toBottomOf="@+id/localText"
+            app:layout_constraintEnd_toStartOf="@+id/guideline73"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/localText"
+            app:layout_constraintTop_toTopOf="@+id/localText" />
+
+        <TextView
+            android:id="@+id/localText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/personal_local_text"
+            android:textColor="@color/textNormal"
+            android:textSize="@dimen/personal_song_info_size"
+            app:layout_constraintBottom_toBottomOf="@+id/listenText"
+            app:layout_constraintEnd_toStartOf="@+id/collectText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/listenText"
+            app:layout_constraintTop_toTopOf="@+id/listenText" />
+
+        <View
+            android:id="@+id/bottomBorder"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/textCaption"
+            app:layout_constraintEnd_toEndOf="@id/guideline73"
+            app:layout_constraintStart_toStartOf="@+id/guideline70"
+            app:layout_constraintTop_toBottomOf="@+id/localText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/personal_listen_recorder_text"
+            android:textSize="@dimen/personal_song_info_size"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            app:layout_constraintStart_toStartOf="@+id/guideline70"
+            app:layout_constraintTop_toBottomOf="@id/bottomBorder" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

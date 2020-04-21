@@ -48,4 +48,6 @@ dependencies {
     implementation 'com.rishabhharit.roundedimageview:RoundedImageView:0.8.4'
     api 'com.pdog.util:dimension-extensions:0.9.0'
     implementation 'com.github.lzyzsd:circleprogress:1.2.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
 }

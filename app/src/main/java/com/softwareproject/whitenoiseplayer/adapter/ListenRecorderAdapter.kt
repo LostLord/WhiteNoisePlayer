@@ -3,6 +3,7 @@ package com.softwareproject.whitenoiseplayer.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,8 @@ import com.pdog.dimension.dp
 import com.softwareproject.whitenoiseplayer.R
 import com.softwareproject.whitenoiseplayer.data.MusicItem
 import com.softwareproject.whitenoiseplayer.databinding.ListenRecorderItemBinding
+import com.softwareproject.whitenoiseplayer.databinding.PersonalHeaderBinding
+import kotlinx.android.synthetic.main.personal_header.view.*
 import java.lang.ClassCastException
 
 private const val TYPE_HEADER = 0
@@ -36,6 +39,9 @@ class ListenRecorderAdapter() : ListAdapter<RecorderDataItem, RecyclerView.ViewH
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
+            is HeaderViewHolder -> {
+                holder.bind()
+            }
             is ItemViewHolder -> {
                 holder.setPaddingHorizontal()
             }
@@ -50,13 +56,18 @@ class ListenRecorderAdapter() : ListAdapter<RecorderDataItem, RecyclerView.ViewH
         }
     }
 
-    class HeaderViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class HeaderViewHolder(val binding: PersonalHeaderBinding): RecyclerView.ViewHolder(binding.root) {
+        fun bind() {
+            binding.root.userAvatar.setOnClickListener {
+                Navigation.findNavController(binding.root).navigate(R.id.action_wrapFragment_to_playerFragment)
+            }
+        }
 
         companion object {
             fun from(parent: ViewGroup): HeaderViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val view = layoutInflater.inflate(R.layout.personal_header, parent, false)
-                return HeaderViewHolder(view)
+                val binding = PersonalHeaderBinding.inflate(layoutInflater, parent, false)
+                return HeaderViewHolder(binding)
             }
         }
     }
@@ -64,7 +75,7 @@ class ListenRecorderAdapter() : ListAdapter<RecorderDataItem, RecyclerView.ViewH
     class ItemViewHolder private constructor(val binding: ListenRecorderItemBinding): RecyclerView.ViewHolder(binding.root) {
         fun setPaddingHorizontal() {
             binding.wrapper.apply {
-                setPadding(20.dp.toInt(), paddingTop, 20.dp.toInt(), paddingBottom)
+                setPadding(20.dp, paddingTop, 20.dp, paddingBottom)
             }
         }
 
