@@ -14,37 +14,37 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.falcon_photo_forth)
+        setContentView(R.layout.activity_main)
 
         // navigation set
-//        navigationView.itemIconTintList = null
-//        navigationView.setOnNavigationItemSelectedListener(navigationOnItemSelectedListener)
-//
-//        initViewPager()
+        navigationView.itemIconTintList = null
+        navigationView.setOnNavigationItemSelectedListener(navigationOnItemSelectedListener)
+
+        initViewPager()
     }
 
-//    private fun initViewPager() {
-//        val mFragments = ArrayList<Fragment>()
-//        mFragments.add(RecommendFragment())
-//        mFragments.add(MainFragment())
-//        mFragments.add(PersonalFragment())
-//        mainViewPager.adapter = MainViewPagerAdapter(this, mFragments)
-//        mainViewPager.currentItem = 1
-//    }
-//
-//    private val navigationOnItemSelectedListener =
-//        BottomNavigationView.OnNavigationItemSelectedListener {
-//            when (it.itemId) {
-//                R.id.navigationRecommend -> {
-//                    mainViewPager.currentItem = 0
-//                }
-//                R.id.navigationMain -> {
-//                    mainViewPager.currentItem = 1
-//                }
-//                R.id.navigationPersonal -> {
-//                    mainViewPager.currentItem = 2
-//                }
-//            }
-//            true
-//        }
+    private fun initViewPager() {
+        val mFragments = ArrayList<Fragment>()
+        mFragments.add(RecommendFragment())
+        mFragments.add(MainFragment())
+        mFragments.add(PersonalFragment())
+        mainViewPager.adapter = MainViewPagerAdapter(this, mFragments)
+        mainViewPager.currentItem = 2
+    }
+
+    private val navigationOnItemSelectedListener =
+        BottomNavigationView.OnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.navigationRecommend -> {
+                    mainViewPager.currentItem = 0
+                }
+                R.id.navigationMain -> {
+                    mainViewPager.currentItem = 1
+                }
+                R.id.navigationPersonal -> {
+                    mainViewPager.currentItem = 2
+                }
+            }
+            true
+        }
 }

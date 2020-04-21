@@ -15,6 +15,7 @@ import com.softwareproject.whitenoiseplayer.adapter.OftenListenAdapter
 import com.softwareproject.whitenoiseplayer.adapter.OftenListenItemDecoration
 import com.softwareproject.whitenoiseplayer.data.MusicItem
 import com.softwareproject.whitenoiseplayer.databinding.FragmentMainBinding
+import com.softwareproject.whitenoiseplayer.util.getStatusBarHeight
 
 class MainFragment : Fragment() {
 
@@ -25,6 +26,10 @@ class MainFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentMainBinding>(inflater, R.layout.fragment_main, container, false)
 
         val listAdapter = OftenListenAdapter()
+        binding.mainLayout.apply {
+            setPadding(paddingLeft, getStatusBarHeight(resources), paddingRight, paddingBottom)
+        }
+        getStatusBarHeight(resources)
         binding.mainRecyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = listAdapter

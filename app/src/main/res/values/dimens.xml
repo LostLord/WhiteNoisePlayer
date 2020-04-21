@@ -4,4 +4,6 @@
     <dimen name="player_image_size">50dp</dimen>
     <dimen name="collect_local_block_height">100dp</dimen>
     <dimen name="favorite_icon_size">25dp</dimen>
+    <dimen name="personal_song_info_size">24sp</dimen>
+    <dimen name="personal_song_number_size">18sp</dimen>
 </resources>

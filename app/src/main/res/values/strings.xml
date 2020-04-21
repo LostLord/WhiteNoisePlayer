@@ -16,4 +16,8 @@
     <string name="photof_f">photof_f</string>
     <string name="photof_s">photof_s</string>
     <string name="pause">pause</string>
+    <string name="personal_local_text">本地</string>
+    <string name="personal_collect_text">收藏</string>
+    <string name="personal_listen_text">听过</string>
+    <string name="personal_listen_recorder_text">听歌纪录</string>
 </resources>
