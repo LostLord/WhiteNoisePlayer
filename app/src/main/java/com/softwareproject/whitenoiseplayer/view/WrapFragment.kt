@@ -34,7 +34,7 @@ class WrapFragment : Fragment() {
         mFragments.add(MainFragment())
         mFragments.add(PersonalFragment())
         binding.mainViewPager.adapter = MainViewPagerAdapter(requireActivity(), mFragments)
-        binding.mainViewPager.currentItem = 0
+        binding.mainViewPager.currentItem = 2
     }
 
     private val navigationOnItemSelectedListener =

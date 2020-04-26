@@ -4,8 +4,6 @@
     <string name="navigation_main">主页</string>
     <string name="navigation_personal">个人</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="playing_text">正在播放</string>
     <string name="search_hint">搜索白噪音</string>
     <string name="collect_text">当前收藏</string>
@@ -21,4 +19,7 @@
     <string name="personal_listen_text">听过</string>
     <string name="personal_listen_recorder_text">听歌纪录</string>
     <string name="day_recommend">今日推荐</string>
+
+    <string name="music_dir">http://192.168.0.103/music/</string>
+    <string name="picture_dir">http://192.168.0.103/picture/</string>
 </resources>

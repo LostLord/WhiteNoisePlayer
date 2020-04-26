@@ -13,4 +13,5 @@
     <color name="colorVIP">#A57400</color>
     <color name="colorCaution">#FF5A5A</color>
     <color name="colorBorder">#EEF1F2</color>
+    <color name="colorWhite">#FFFFFF</color>
 </resources>

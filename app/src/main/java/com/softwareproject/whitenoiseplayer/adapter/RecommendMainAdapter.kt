@@ -67,11 +67,12 @@ class RecommendMainAdapter : ListAdapter<RecommendDataItem, RecyclerView.ViewHol
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = DayRecommendRecyclerViewBinding.inflate(layoutInflater, parent, true)
                 val recommendAdapter = DayRecommendAdapter()
+                recommendAdapter.submitList(getMockData())
                 binding.recyclerView.apply {
                     layoutManager = LinearLayoutManager(binding.recyclerView.context)
                     adapter = recommendAdapter
+                    Log.d("recommend", "${recommendAdapter.itemCount} - aaa")
                 }
-                recommendAdapter.submitList(getMockData())
                 return HorizontalRecyclerView(binding)
             }
         }
