@@ -1,4 +1,4 @@
-package com.softwareproject.whitenoiseplayer.data
+package com.softwareproject.whitenoiseplayer.repository.data
 
 data class MusicItem(
     var id: Long,

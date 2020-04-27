@@ -6,6 +6,9 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.softwareproject.whitenoiseplayer.R
+import com.softwareproject.whitenoiseplayer.repository.data.MusicItem
+import com.softwareproject.whitenoiseplayer.view.MainActivity
 import java.util.*
 
 class PlayingMusicViewModel(application: Application) : AndroidViewModel(application) {
@@ -13,6 +16,7 @@ class PlayingMusicViewModel(application: Application) : AndroidViewModel(applica
     private var currentTime = MutableLiveData<Int>()
     private var isPlaying = MutableLiveData<Boolean>()
     private val duration = MutableLiveData<Int>()
+    private val musicItem = MutableLiveData<MusicItem>()
     private var timer = Timer()
 
     init {
@@ -26,6 +30,16 @@ class PlayingMusicViewModel(application: Application) : AndroidViewModel(applica
         player.setOnCompletionListener {
             cancelTimer()
         }
+    }
+
+    fun getMusicItem(): LiveData<MusicItem> {
+        return musicItem
+    }
+
+    fun setMusicItem(musicItem: MusicItem) {
+        this.musicItem.postValue(musicItem)
+        val prefix = getApplication<Application>().resources.getString(R.string.music_dir)
+        setDataSource(prefix + musicItem.audioPath)
     }
 
     fun getPlayingStatus(): LiveData<Boolean> {

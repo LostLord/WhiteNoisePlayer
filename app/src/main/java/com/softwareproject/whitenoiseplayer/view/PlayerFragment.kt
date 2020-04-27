@@ -36,11 +36,12 @@ class PlayerFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val musicDir = activity?.resources?.getString(R.string.music_dir)
-        val pictureDir = activity?.resources?.getString(R.string.picture_dir)
-        Glide.with(this).load("${pictureDir}1.jpg").into(binding.musicBackground)
-        playingMusicViewModel.setDataSource("${musicDir}1.mp3")
-
+        playingMusicViewModel.getMusicItem().observe(requireActivity(), Observer { musicItem ->
+            activity?.let {
+                val pictureDir = it.resources.getString(R.string.picture_dir)
+                Glide.with(this).load(pictureDir + musicItem.coverImage).into(binding.musicBackground)
+            }
+        })
         playingMusicViewModel.getPlayingStatus().observe(requireActivity(), Observer { isPlaying ->
             val drawable = activity?.getDrawable(if (isPlaying) R.drawable.ic_stop else R.drawable.play_icon)
             binding.pauseButton.setImageDrawable(drawable)

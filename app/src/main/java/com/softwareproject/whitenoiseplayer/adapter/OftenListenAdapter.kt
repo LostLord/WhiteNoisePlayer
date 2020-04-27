@@ -7,19 +7,21 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.softwareproject.whitenoiseplayer.R
-import com.softwareproject.whitenoiseplayer.data.MusicItem
+import com.softwareproject.whitenoiseplayer.databinding.ItemClickListener
+import com.softwareproject.whitenoiseplayer.databinding.OftenListenItemBinding
+import com.softwareproject.whitenoiseplayer.repository.data.MusicItem
 import java.lang.ClassCastException
 
 private const val TYPE_HEADER = 0
 private const val TYPE_ITEM = 1
 private const val TYPE_FOOTER = 2
 
-class OftenListenAdapter() : ListAdapter<OftenListenDataItem, RecyclerView.ViewHolder>(OftenListenDiffCallback()) {
+class OftenListenAdapter(val itemClickListener: ItemClickListener) : ListAdapter<OftenListenDataItem, RecyclerView.ViewHolder>(OftenListenDiffCallback()) {
 
     fun addHeaderAndList(list: List<MusicItem>?) {
         val items = when (list) {
             null -> listOf(OftenListenDataItem.Header)
-            else -> listOf(OftenListenDataItem.Header) + list.map { OftenListenDataItem.OftenListenItem(it.id) } + listOf(OftenListenDataItem.Footer)
+            else -> listOf(OftenListenDataItem.Header) + list.map { OftenListenDataItem.OftenListenItem(it) } + listOf(OftenListenDataItem.Footer)
         }
         submitList(items)
     }
@@ -34,6 +36,12 @@ class OftenListenAdapter() : ListAdapter<OftenListenDataItem, RecyclerView.ViewH
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when (holder) {
+            is ItemViewHolder -> {
+                val musicItem = getItem(position) as OftenListenDataItem.OftenListenItem
+                holder.bind(musicItem.musicItem, position, itemClickListener)
+            }
+        }
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -54,12 +62,19 @@ class OftenListenAdapter() : ListAdapter<OftenListenDataItem, RecyclerView.ViewH
         }
     }
 
-    class ItemViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class ItemViewHolder(val binding: OftenListenItemBinding): RecyclerView.ViewHolder(binding.root) {
+        fun bind(musicItem: MusicItem, index: Int, clickListener: ItemClickListener) {
+            binding.music = musicItem
+            binding.number = "No.${index}"
+            binding.clickListener = clickListener
+            binding.executePendingBindings()
+        }
+
         companion object {
             fun from(parent: ViewGroup): ItemViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val view = layoutInflater.inflate(R.layout.often_listen_item, parent, false)
-                return ItemViewHolder(view)
+                val binding = OftenListenItemBinding.inflate(layoutInflater, parent, false)
+                return ItemViewHolder(binding)
             }
         }
     }
@@ -87,8 +102,8 @@ class OftenListenDiffCallback : DiffUtil.ItemCallback<OftenListenDataItem>() {
 }
 
 sealed class OftenListenDataItem {
-    data class OftenListenItem(val itemId: Long) : OftenListenDataItem() {
-        override val id = itemId
+    data class OftenListenItem(val musicItem: MusicItem) : OftenListenDataItem() {
+        override val id = musicItem.id
     }
     object Header: OftenListenDataItem() {
         override val id = Long.MIN_VALUE

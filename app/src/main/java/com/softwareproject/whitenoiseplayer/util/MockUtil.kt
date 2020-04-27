@@ -1,6 +1,6 @@
 package com.softwareproject.whitenoiseplayer.util
 
-import com.softwareproject.whitenoiseplayer.data.MusicItem
+import com.softwareproject.whitenoiseplayer.repository.data.MusicItem
 
 fun getMockData(): List<MusicItem> {
     val testData = ArrayList<MusicItem>()

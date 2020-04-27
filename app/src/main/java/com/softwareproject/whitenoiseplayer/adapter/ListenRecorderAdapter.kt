@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.pdog.dimension.dp
 import com.softwareproject.whitenoiseplayer.R
-import com.softwareproject.whitenoiseplayer.data.MusicItem
+import com.softwareproject.whitenoiseplayer.repository.data.MusicItem
 import com.softwareproject.whitenoiseplayer.databinding.ListenRecorderItemBinding
 import com.softwareproject.whitenoiseplayer.databinding.PersonalHeaderBinding
 import kotlinx.android.synthetic.main.personal_header.view.*

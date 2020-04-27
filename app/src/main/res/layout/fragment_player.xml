@@ -24,7 +24,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/test"
             tools:srcCompat="@tools:sample/backgrounds/scenic[5]" />
 
         <androidx.constraintlayout.widget.Guideline
@@ -199,7 +198,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="高山"
+            android:text="@{playingMusic.musicItem.name}"
             android:textColor="#FFFFFF"
             android:textSize="36sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline35"

@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.softwareproject.whitenoiseplayer.R
 import com.softwareproject.whitenoiseplayer.adapter.ListenRecorderAdapter
-import com.softwareproject.whitenoiseplayer.data.MusicItem
+import com.softwareproject.whitenoiseplayer.repository.data.MusicItem
 import com.softwareproject.whitenoiseplayer.databinding.FragmentPersonalBinding
 import com.softwareproject.whitenoiseplayer.util.getScreenHeight
 

@@ -7,6 +7,12 @@
         <variable
             name="number"
             type="String" />
+        <variable
+            name="music"
+            type="com.softwareproject.whitenoiseplayer.repository.data.MusicItem" />
+        <variable
+            name="clickListener"
+            type="com.softwareproject.whitenoiseplayer.databinding.ItemClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +25,7 @@
             android:layout_height="150dp"
             android:contentDescription="@string/item_image_content"
             android:scaleType="centerCrop"
-            android:src="@drawable/test"
+            imageUrl="@{music.coverImage}"
             app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,10 +45,10 @@
             android:id="@+id/musicNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            android:text="都市"
+            android:layout_marginEnd="15dp"
+            android:text="@{music.name}"
             android:textColor="@color/textNormal"
-            android:textSize="30sp"
+            android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="@id/playButton"
             app:layout_constraintEnd_toStartOf="@id/playButton"
             app:layout_constraintTop_toTopOf="@id/playButton" />
@@ -55,6 +61,7 @@
             android:src="@drawable/play_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="@{() -> clickListener.onClick(music)}" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
