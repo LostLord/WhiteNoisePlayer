@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 
 import com.softwareproject.whitenoiseplayer.R
 import com.softwareproject.whitenoiseplayer.adapter.ListenRecorderAdapter
@@ -48,15 +49,5 @@ class PersonalFragment : Fragment() {
         personalViewModel.getPersonalListenList()?.observe(requireActivity(), Observer {
             recorderAdapter.addHeaderAndList(it)
         })
-    }
-
-    private fun getMockData(): List<MusicItem> {
-        val testData = ArrayList<MusicItem>()
-        testData.add(MusicItem(1, "", "", "", ""))
-        testData.add(MusicItem(2, "", "", "", ""))
-        testData.add(MusicItem(3, "", "", "", ""))
-        testData.add(MusicItem(4, "", "", "", ""))
-
-        return testData
     }
 }

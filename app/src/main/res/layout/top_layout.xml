@@ -1,88 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:ignore="MissingDefaultResource">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="26"
-        android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintBottom_toTopOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="26" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="40dp"
-        android:layout_height="5dp"
-        android:background="@drawable/day_bar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+    <data>
+        <variable
+            name="playingMusic"
+            type="com.softwareproject.whitenoiseplayer.viewmodel.PlayingMusicViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/player_image_size"
-        android:background="@drawable/player_thumb_background"
-        android:paddingStart="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="RtlSymmetry">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingDefaultResource">
 
-        <LinearLayout
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/playingMusicThumbImage"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginEnd="20dp"
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:text="26"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="26" />
 
-            <TextView
-                android:id="@+id/playingHintText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/playing_text"
-                android:textColor="@color/textCaption"
-                android:textSize="12sp"/>
+        <View
+            android:id="@+id/view"
+            android:layout_width="40dp"
+            android:layout_height="5dp"
+            android:background="@drawable/day_bar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
 
-            <TextView
-                android:id="@+id/musicNameText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:maxWidth="100dp"
-                android:text="高山"
-                android:textColor="@color/textTitle"
-                android:textSize="15sp" />
-        </LinearLayout>
-
-        <com.mikhaellopez.circularimageview.CircularImageView
-            android:id="@+id/playingMusicThumbImage"
-            android:layout_width="@dimen/player_image_size"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/playerThumb"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/player_image_size"
-            android:scaleType="centerCrop"
-            android:src="@drawable/test"
-            app:civ_border="false"
+            android:background="@drawable/player_thumb_background"
+            android:paddingStart="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            visible="@{playingMusic.playingStatus}"
+            tools:ignore="RtlSymmetry">
+
+            <LinearLayout
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/playingMusicThumbImage"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/playingHintText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/playing_text"
+                    android:textColor="@color/textCaption"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/musicNameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxWidth="100dp"
+                    android:text="@{playingMusic.musicItem.name}"
+                    android:textColor="@color/textTitle"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/playingMusicThumbImage"
+                android:layout_width="@dimen/player_image_size"
+                android:layout_height="@dimen/player_image_size"
+                android:scaleType="centerCrop"
+                imageUrl="@{playingMusic.musicItem.coverImage}"
+                app:civ_border="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

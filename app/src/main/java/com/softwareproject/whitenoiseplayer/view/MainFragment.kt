@@ -44,6 +44,7 @@ class MainFragment : Fragment() {
             adapter = oftenListAdapter
             addItemDecoration(OftenListenItemDecoration())
         }
+        binding.playingMusic = playingMusicViewModel
 
         return binding.root
     }

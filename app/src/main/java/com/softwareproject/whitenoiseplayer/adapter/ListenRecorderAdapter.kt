@@ -7,6 +7,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.pdog.dimension.dp
 import com.softwareproject.whitenoiseplayer.R
 import com.softwareproject.whitenoiseplayer.databinding.ItemClickListener
@@ -60,9 +61,9 @@ class ListenRecorderAdapter(private val itemClickListener: ItemClickListener) : 
 
     class HeaderViewHolder(val binding: PersonalHeaderBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind() {
-            binding.root.userAvatar.setOnClickListener {
-                Navigation.findNavController(binding.root).navigate(R.id.action_wrapFragment_to_playerFragment)
-            }
+            val pictureDir = binding.root.context.getString(R.string.picture_dir)
+            Glide.with(binding.root).load(pictureDir + "user_background.jpg").into(binding.userBackground)
+            Glide.with(binding.root).load(pictureDir + "avatar.jpg").into(binding.userAvatar)
         }
 
         companion object {

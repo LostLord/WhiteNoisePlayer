@@ -14,6 +14,8 @@ import com.softwareproject.whitenoiseplayer.adapter.DayRecommendAdapter
 
 import com.softwareproject.whitenoiseplayer.databinding.FragmentRecommendBinding
 import com.softwareproject.whitenoiseplayer.databinding.ItemClickListener
+import com.softwareproject.whitenoiseplayer.util.DayTime
+import com.softwareproject.whitenoiseplayer.util.getDayTime
 import com.softwareproject.whitenoiseplayer.util.getStatusBarHeight
 import com.softwareproject.whitenoiseplayer.viewmodel.PlayingMusicViewModel
 import com.softwareproject.whitenoiseplayer.viewmodel.RecommendViewModel
@@ -45,6 +47,8 @@ class RecommendFragment : Fragment() {
             adapter = recommendAdapter
         }
 
+        binding.playingMusic = playingMusicViewModel
+        setTimeTextAndImage()
         return binding.root
     }
 
@@ -53,5 +57,26 @@ class RecommendFragment : Fragment() {
         recommendViewModel.getRecommendList()?.observe(requireActivity(), Observer {
             recommendAdapter.submitList(it)
         })
+    }
+
+    private fun setTimeTextAndImage() {
+        when (getDayTime()) {
+            DayTime.MORNING -> {
+                binding.dayTimeText.text = "早上好"
+                binding.dayImage.setImageDrawable(activity?.getDrawable(R.drawable.morning))
+            }
+            DayTime.NOON -> {
+                binding.dayTimeText.text = "中午好"
+                binding.dayImage.setImageDrawable(activity?.getDrawable(R.drawable.noon))
+            }
+            DayTime.AFTERNOON -> {
+                binding.dayTimeText.text = "下午好"
+                binding.dayImage.setImageDrawable(activity?.getDrawable(R.drawable.afternoon))
+            }
+            DayTime.NIGHT -> {
+                binding.dayTimeText.text = "晚上好"
+                binding.dayImage.setImageDrawable(activity?.getDrawable(R.drawable.night))
+            }
+        }
     }
 }
