@@ -22,14 +22,23 @@
             app:layout_constraintTop_toTopOf="parent"
             layout="@layout/top_layout" />
 
+        <include
+            android:id="@+id/dayShow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recommendTop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            layout="@layout/day_show" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recommendRecyclerView"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/dayShow"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recommendTop" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -29,4 +29,44 @@ object MusicRepository {
         })
         return listData
     }
+
+    fun getPersonalListen(): MutableLiveData<List<MusicItem>> {
+        val listData = MutableLiveData<List<MusicItem>>()
+        api.getPersonalListen().enqueue(object : Callback<List<MusicItem>> {
+            override fun onFailure(call: Call<List<MusicItem>>, t: Throwable) {
+                listData.postValue(null)
+            }
+
+            override fun onResponse(
+                call: Call<List<MusicItem>>,
+                response: Response<List<MusicItem>>
+            ) {
+                if (response.isSuccessful) {
+                    listData.postValue(response.body())
+                }
+            }
+
+        })
+        return listData
+    }
+
+    fun getRecommendList(): MutableLiveData<List<MusicItem>> {
+        val listData = MutableLiveData<List<MusicItem>>()
+        api.getRecommendList().enqueue(object : Callback<List<MusicItem>> {
+            override fun onFailure(call: Call<List<MusicItem>>, t: Throwable) {
+                listData.postValue(null)
+            }
+
+            override fun onResponse(
+                call: Call<List<MusicItem>>,
+                response: Response<List<MusicItem>>
+            ) {
+                if (response.isSuccessful) {
+                    listData.postValue(response.body())
+                }
+            }
+
+        })
+        return listData
+    }
 }

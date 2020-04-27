@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.pdog.dimension.dp
 import com.softwareproject.whitenoiseplayer.R
+import com.softwareproject.whitenoiseplayer.databinding.ItemClickListener
 import com.softwareproject.whitenoiseplayer.repository.data.MusicItem
 import com.softwareproject.whitenoiseplayer.databinding.ListenRecorderItemBinding
 import com.softwareproject.whitenoiseplayer.databinding.PersonalHeaderBinding
@@ -19,11 +20,11 @@ private const val TYPE_HEADER = 0
 private const val TYPE_ITEM = 1
 private const val TYPE_FOOTER = 2
 
-class ListenRecorderAdapter() : ListAdapter<RecorderDataItem, RecyclerView.ViewHolder>(RecorderDiffCallback()) {
+class ListenRecorderAdapter(private val itemClickListener: ItemClickListener) : ListAdapter<RecorderDataItem, RecyclerView.ViewHolder>(RecorderDiffCallback()) {
     fun addHeaderAndList(list: List<MusicItem>?) {
         val items = when (list) {
             null -> listOf(RecorderDataItem.Header)
-            else -> listOf(RecorderDataItem.Header) + list.map { RecorderDataItem.RecorderItem(it.id) } + listOf(RecorderDataItem.Footer)
+            else -> listOf(RecorderDataItem.Header) + list.map { RecorderDataItem.RecorderItem(it) } + listOf(RecorderDataItem.Footer)
         }
         submitList(items)
     }
@@ -43,7 +44,8 @@ class ListenRecorderAdapter() : ListAdapter<RecorderDataItem, RecyclerView.ViewH
                 holder.bind()
             }
             is ItemViewHolder -> {
-                holder.setPaddingHorizontal()
+                val musicItem = getItem(position) as RecorderDataItem.RecorderItem
+                holder.bind(musicItem.musicItem, itemClickListener)
             }
         }
     }
@@ -73,9 +75,11 @@ class ListenRecorderAdapter() : ListAdapter<RecorderDataItem, RecyclerView.ViewH
     }
 
     class ItemViewHolder private constructor(val binding: ListenRecorderItemBinding): RecyclerView.ViewHolder(binding.root) {
-        fun setPaddingHorizontal() {
+        fun bind(musicItem: MusicItem, clickListener: ItemClickListener) {
             binding.wrapper.apply {
                 setPadding(20.dp, paddingTop, 20.dp, paddingBottom)
+                binding.music = musicItem
+                binding.clickListener = clickListener
             }
         }
 
@@ -111,8 +115,8 @@ class RecorderDiffCallback : DiffUtil.ItemCallback<RecorderDataItem>() {
 }
 
 sealed class RecorderDataItem {
-    data class RecorderItem(val itemId: Long) : RecorderDataItem() {
-        override val id = itemId
+    data class RecorderItem(val musicItem: MusicItem) : RecorderDataItem() {
+        override val id = musicItem.id
     }
     object Header: RecorderDataItem() {
         override val id = Long.MIN_VALUE

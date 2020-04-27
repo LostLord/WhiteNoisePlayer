@@ -3,7 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="clickListener"
+            type="com.softwareproject.whitenoiseplayer.databinding.ItemClickListener" />
+        <variable
+            name="music"
+            type="com.softwareproject.whitenoiseplayer.repository.data.MusicItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,8 +22,8 @@
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/test"
             app:cornerRadius="20dp"
+            imageUrl="@{music.coverImage}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -28,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:text="珊瑚"
+            android:text="@{music.name}"
             android:textColor="#FFFFFF"
             android:textSize="28sp"
             android:textStyle="bold"
@@ -40,17 +45,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:text="dsafasdfsadfadsfasd"
+            android:text="@{music.brief}"
+            app:layout_constrainedWidth="true"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
+            app:layout_constraintHorizontal_bias="0"
+
             app:layout_constraintBottom_toBottomOf="@id/musicCoverImage"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="@id/title" />
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
+            android:onClick="@{() -> clickListener.onClick(music)}"
             android:src="@drawable/play_icon"
             app:layout_constraintBottom_toBottomOf="@id/musicCoverImage"
             app:layout_constraintEnd_toEndOf="@id/musicCoverImage" />

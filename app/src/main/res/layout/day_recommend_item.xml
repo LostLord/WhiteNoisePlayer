@@ -3,11 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="music"
+            type="com.softwareproject.whitenoiseplayer.repository.data.MusicItem" />
+        <variable
+            name="clickListener"
+            type="com.softwareproject.whitenoiseplayer.databinding.ItemClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:onClick="@{() -> clickListener.onClick(music)}"
         android:layout_height="wrap_content">
 
         <com.rishabhharit.roundedimageview.RoundedImageView
@@ -15,9 +22,9 @@
             android:layout_width="170dp"
             app:cornerRadius="10dp"
             app:layout_constraintStart_toStartOf="parent"
-            android:src="@drawable/test"
             android:scaleType="centerCrop"
             app:layout_constraintTop_toTopOf="parent"
+            imageUrl="@{music.coverImage}"
             android:layout_height="230dp" />
 
         <TextView
@@ -25,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:text="珊瑚"
+            android:text="@{music.name}"
             android:textColor="#FFFFFF"
             android:textSize="28sp"
             android:textStyle="bold"
@@ -38,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:maxWidth="130dp"
-            android:text="dfasafds"
+            android:text="@{music.brief}"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@id/coverImage"
