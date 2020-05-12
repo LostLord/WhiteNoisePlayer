@@ -21,7 +21,9 @@ import com.softwareproject.whitenoiseplayer.databinding.ItemClickListener
 import com.softwareproject.whitenoiseplayer.util.getStatusBarHeight
 import com.softwareproject.whitenoiseplayer.viewmodel.MainViewModel
 import com.softwareproject.whitenoiseplayer.viewmodel.PlayingMusicViewModel
-
+/*
+for main page
+ */
 class MainFragment : Fragment() {
     private val mainViewModel: MainViewModel by activityViewModels()
     private val playingMusicViewModel: PlayingMusicViewModel by activityViewModels()

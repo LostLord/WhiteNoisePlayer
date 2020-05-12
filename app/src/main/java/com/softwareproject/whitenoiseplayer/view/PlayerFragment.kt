@@ -14,7 +14,9 @@ import com.softwareproject.whitenoiseplayer.R
 
 import com.softwareproject.whitenoiseplayer.databinding.FragmentPlayerBinding
 import com.softwareproject.whitenoiseplayer.viewmodel.PlayingMusicViewModel
-
+/*
+for music player page
+ */
 class PlayerFragment : Fragment() {
     private val playingMusicViewModel: PlayingMusicViewModel by activityViewModels()
     private lateinit var binding: FragmentPlayerBinding

@@ -9,7 +9,9 @@ enum class DayTime {
     AFTERNOON,
     NIGHT
 }
-
+/*
+界面根据时间显示问候
+ */
 val calendar: Calendar = Calendar.getInstance()
 
 fun getDayTime(): DayTime {

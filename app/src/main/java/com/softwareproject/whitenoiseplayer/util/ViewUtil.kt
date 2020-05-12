@@ -4,7 +4,9 @@ import android.content.Context
 import android.content.res.Resources
 import android.util.DisplayMetrics
 import android.view.WindowManager
-
+/*
+屏幕适配
+ */
 fun getStatusBarHeight(resources: Resources): Int {
     val statusBarHeightId = resources.getIdentifier("status_bar_height", "dimen", "android")
     return if (statusBarHeightId > 0) {

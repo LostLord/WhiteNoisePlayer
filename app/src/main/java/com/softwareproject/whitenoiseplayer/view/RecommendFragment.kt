@@ -19,7 +19,9 @@ import com.softwareproject.whitenoiseplayer.util.getDayTime
 import com.softwareproject.whitenoiseplayer.util.getStatusBarHeight
 import com.softwareproject.whitenoiseplayer.viewmodel.PlayingMusicViewModel
 import com.softwareproject.whitenoiseplayer.viewmodel.RecommendViewModel
-
+/*
+for recommend page
+ */
 class RecommendFragment : Fragment() {
     private lateinit var binding: FragmentRecommendBinding
     private val recommendViewModel: RecommendViewModel by activityViewModels()

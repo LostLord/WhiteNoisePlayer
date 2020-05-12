@@ -19,7 +19,9 @@ import com.softwareproject.whitenoiseplayer.databinding.FragmentPersonalBinding
 import com.softwareproject.whitenoiseplayer.databinding.ItemClickListener
 import com.softwareproject.whitenoiseplayer.viewmodel.PersonalViewModel
 import com.softwareproject.whitenoiseplayer.viewmodel.PlayingMusicViewModel
-
+/*
+for personal page
+ */
 class PersonalFragment : Fragment() {
     private val personalViewModel: PersonalViewModel by activityViewModels()
     private val playingMusicViewModel: PlayingMusicViewModel by activityViewModels()

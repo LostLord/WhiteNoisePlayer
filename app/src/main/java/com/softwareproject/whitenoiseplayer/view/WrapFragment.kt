@@ -10,7 +10,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.softwareproject.whitenoiseplayer.R
 import com.softwareproject.whitenoiseplayer.adapter.MainViewPagerAdapter
 import com.softwareproject.whitenoiseplayer.databinding.FragmentWrapBinding
-
+/*
+Wrap the pages
+ */
 class WrapFragment : Fragment() {
     private lateinit var binding: FragmentWrapBinding
 
