@@ -12,6 +12,11 @@ import org.junit.Assert.*
  * 噗噗噗噗噗噗噗噗噗噗噗噗噗噗噗噗噗噗噗噗噗噗噗噗噗噗噗噗噗噗
  * See [testing documentation](http://d.android.com/tools/testing).
  */
+ 
+ /*
+ *同
+ *上
+ */
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
@@ -22,3 +27,4 @@ class ExampleUnitTest {
         /
     }
 }
+
