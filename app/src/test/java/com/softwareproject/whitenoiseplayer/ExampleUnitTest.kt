@@ -21,7 +21,12 @@ import org.junit.Assert.*
 *4.石油美元体系，当前处境中国是否有可能创造出一个新的模式
 *5.疫情影响下的经济全球化状况以及二者关系，全球化对公共卫生或他产业链的影响
 *6.中国如何应对疫情带来的全球化考验？（政策）
-
+ * touch test
+ * cp test tt
+ * rm tt
+ * sudo mn 
+ * exit
+ * 
  */
 class ExampleUnitTest {
     @Test
